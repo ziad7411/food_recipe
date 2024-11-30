@@ -3,8 +3,8 @@ import 'package:food_recipe/constants/strings.dart';
 
 class FoodRecipeWebService {
   late Dio dio;
-
-  FoodRecipeWebService(){
+  String firstChar = "a";
+  FoodRecipeWebService(this.firstChar){
     BaseOptions options = BaseOptions(
       baseUrl: baseUrl,
       receiveDataWhenStatusError: true,
@@ -13,14 +13,14 @@ class FoodRecipeWebService {
     );
     dio = Dio(options);
   }
-  Future<List<dynamic>> getAllRecipe() async{
+  Future<Map<String?, dynamic>> getAllRecipe() async{
     try {
-      Response response = await dio.get("search.php?f=a&apiKey=$apiKey");
+      Response response = await dio.get("search.php?f=$firstChar&apiKey=$apiKey");
       print(response.data.toString());
       return response.data;
     } catch (e) {
       print(e.toString());
-      return[];
+      return Map<String?, dynamic>();
       
     }
   }

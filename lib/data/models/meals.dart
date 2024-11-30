@@ -8,15 +8,16 @@ class Meals {
   late String strTags;
   late String strYoutube;
 
-Meals.fromJson(Map <String,dynamic> json){
-  strMeal = json["strMeal"];
-  strCategory = json["strCategory"];
-  strArea = json["strArea"];
-  strInstructions = json["strInstructions"];
-  image = json["strMealThumb"];
-  strTags = json["strTags"];
-  strYoutube = json["strYoutube"];
+Meals.fromJson(Map<String, dynamic> json) {
+    strMeal = json["strMeal"] ?? "Unknown Meal";
+    strCategory = json["strCategory"] ?? "Unknown Category";
+    strArea = json["strArea"] ?? "Unknown Area";
+    strInstructions = json["strInstructions"] ?? "No Instructions Available";
+    image = json["strMealThumb"] ?? "";
+    strTags = json["strTags"] ?? "No Tags";
+    strYoutube = json["strYoutube"] ?? "No YouTube Link";
+  }
 
-}
+
 
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_recipe/business_model/cubit/food_recipe_cubit.dart';
 import 'package:food_recipe/constants/my_colors.dart';
+import 'package:food_recipe/presentations/widgets/customize_letters_widget.dart';
 import 'package:food_recipe/presentations/widgets/meals_item.dart';
 
 class RecipeScreen extends StatefulWidget {
@@ -55,12 +56,12 @@ return SingleChildScrollView(
     return GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 1 ,
       childAspectRatio: 2/3,
-      crossAxisSpacing: 1 ,
-      mainAxisSpacing: 1,
+      crossAxisSpacing: 8 ,
+      mainAxisSpacing: 8,
 
       ),
       shrinkWrap: true,
-      physics: const ClampingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: allMeals.length,
        itemBuilder: (ctx,index){
@@ -73,7 +74,22 @@ return SingleChildScrollView(
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("welcome"),backgroundColor: MyColors.myGreen,),
-      body:buildBlocWidget()
+      body:SingleChildScrollView(
+        child: Container(width: double.infinity,
+          child: Column(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height*.2,
+                width: double.infinity,
+                color: MyColors.myWhite,
+                child: customiseLetter(context),
+
+              ),
+              buildBlocWidget()
+            ],
+          ),
+        ),
+      )
     );
   }
 }
