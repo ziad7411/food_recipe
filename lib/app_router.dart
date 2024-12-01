@@ -11,7 +11,7 @@ class AppRouter {
   late FoodRecipeCubit foodRecipeCubit;
 
 AppRouter(){
-foodRecipeRepositery  = FoodRecipeRepositery(FoodRecipeWebService("a"));
+foodRecipeRepositery  = FoodRecipeRepositery(FoodRecipeWebService());
 foodRecipeCubit = FoodRecipeCubit(foodRecipeRepositery);
 
 }

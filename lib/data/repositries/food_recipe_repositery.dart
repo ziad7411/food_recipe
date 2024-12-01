@@ -5,8 +5,8 @@ class FoodRecipeRepositery {
   final FoodRecipeWebService foodRecipeWebService;
 
   FoodRecipeRepositery(this.foodRecipeWebService);
-Future<List<Meals>> getAllRecipe() async {
-  final foodRecipe = await foodRecipeWebService.getAllRecipe();
+Future<List<Meals>> getAllRecipe(String letter) async {
+  final foodRecipe = await foodRecipeWebService.getAllRecipe(letter);
   if (foodRecipe["meals"] != null) {
     List<dynamic> mealsData = foodRecipe["meals"] as List<dynamic>;
     return mealsData.map((meal) => Meals.fromJson(meal as Map<String, dynamic>)).toList();

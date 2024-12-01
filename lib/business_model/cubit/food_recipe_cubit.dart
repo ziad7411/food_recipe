@@ -12,8 +12,8 @@ class FoodRecipeCubit extends Cubit<FoodRecipeState> {
   FoodRecipeCubit(this.foodRecipeRepositery) : super(FoodRecipeInitial());
 
   
-  List<dynamic> getAllRecipe() {
-    foodRecipeRepositery.getAllRecipe().then((meals) {
+  List<dynamic> getAllRecipe(String letter) {
+    foodRecipeRepositery.getAllRecipe(letter).then((meals) {
       emit(FoodRecipeLoaded(meals));
       this.meals = meals;
     });

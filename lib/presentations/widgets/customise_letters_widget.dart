@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_recipe/business_model/cubit/food_recipe_cubit.dart';
 import 'package:food_recipe/constants/my_colors.dart';
 import 'package:food_recipe/data/web_srevice/food_recipe_web_service.dart';
 import 'package:food_recipe/presentations/widgets/geniric_flexable_button.dart';
@@ -14,47 +16,47 @@ Widget customiseLetter(BuildContext context) {
           children: [
             Flexible(
               child: GenericFlexibleButton(text: "A", onPressed: () {
-                FoodRecipeWebService('a');
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("a");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "B", onPressed: () {
-                FoodRecipeWebService("b");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("b");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "C", onPressed: () {
-                FoodRecipeWebService("c");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("c");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "D", onPressed: () {
-                FoodRecipeWebService("d");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("d");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "E", onPressed: () {
-                FoodRecipeWebService("e");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("e");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "F", onPressed: () {
-                FoodRecipeWebService("f");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("f");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "G", onPressed: () {
-                FoodRecipeWebService("g");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("g");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "H", onPressed: () {
-                FoodRecipeWebService("h");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("h");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "I", onPressed: () {
-                FoodRecipeWebService("i");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("i");
               }),
             ),
           ],
@@ -64,47 +66,47 @@ Widget customiseLetter(BuildContext context) {
           children: [
             Flexible(
               child: GenericFlexibleButton(text: "J", onPressed: () {
-                FoodRecipeWebService("j");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("j");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "K", onPressed: () {
-                FoodRecipeWebService("k");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("k");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "L", onPressed: () {
-                FoodRecipeWebService("l");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("l");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "M", onPressed: () {
-                FoodRecipeWebService("m");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("m");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "N", onPressed: () {
-                FoodRecipeWebService("n");
+               BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("n");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "O", onPressed: () {
-                FoodRecipeWebService("o");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("o");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "P", onPressed: () {
-                FoodRecipeWebService("p");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("p");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "Q", onPressed: () {
-                FoodRecipeWebService("q");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("q");
               }),
             ),
             Flexible(
               child: GenericFlexibleButton(text: "R", onPressed: () {
-                FoodRecipeWebService("r");
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("r");
               }),
             ),
           ],
@@ -113,28 +115,44 @@ Widget customiseLetter(BuildContext context) {
         Row(
           children: [
             Flexible(
-              child: GenericFlexibleButton(text: "S", onPressed: () {}),
+              child: GenericFlexibleButton(text: "S", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("s");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "T", onPressed: () {}),
+              child: GenericFlexibleButton(text: "T", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("t");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "U", onPressed: () {}),
+              child: GenericFlexibleButton(text: "U", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("u");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "V", onPressed: () {}),
+              child: GenericFlexibleButton(text: "V", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("v");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "W", onPressed: () {}),
+              child: GenericFlexibleButton(text: "W",onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("w");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "X", onPressed: () {}),
+              child: GenericFlexibleButton(text: "X", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("x");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "Y", onPressed: () {}),
+              child: GenericFlexibleButton(text: "Y", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("y");
+              }),
             ),
             Flexible(
-              child: GenericFlexibleButton(text: "Z", onPressed: () {}),
+              child: GenericFlexibleButton(text: "Z", onPressed: () {
+                BlocProvider.of<FoodRecipeCubit>(context).getAllRecipe("z");
+              }),
             ),
           ],
         ),

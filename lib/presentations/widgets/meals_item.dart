@@ -9,26 +9,16 @@ class MealsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(8, 8, 8, 8),
+      margin: EdgeInsets.all(8),
       width: double.infinity,
-      padding: EdgeInsetsDirectional.all(4),
+      padding: EdgeInsetsDirectional.all(8),
       decoration: BoxDecoration(
+        border: Border.all(color: Colors.black,strokeAlign: BorderSide.strokeAlignOutside),
         color: MyColors.myGreen,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(6),
+        
       ),
       child: GridTile(
-        child: Container(
-          color: MyColors.myWhite,
-          child: meals.image.isNotEmpty
-              ? FadeInImage.assetNetwork(
-                  width: double.infinity,
-                  height: double.infinity,
-                  placeholder: 'assets/images/loading.gif',
-                  image: meals.image,
-                  fit: BoxFit.cover,
-                )
-              : Image.asset('assets/images/searchbg.jpg'),
-        ),
         footer: Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -37,24 +27,27 @@ class MealsItem extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Name : ${meals.strMeal}",
+                " ${meals.strMeal}",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 18,
                     color: MyColors.myGreen,
-                    height: 1.5,
-                    fontWeight: FontWeight.bold),
+                    height: 2,
+                    fontWeight: FontWeight.bold,),
               ),
               Text(
                 "Category : ${meals.strCategory}",
+                textAlign: TextAlign.center,
                 style:
-                    TextStyle(fontSize: 12, color: MyColors.myGreen, height: 1),
+                    TextStyle(fontSize: 16, color: MyColors.myGreen, height: 1.5),
               ),
               Text(
                 "Country : ${meals.strArea}",
+                textAlign: TextAlign.center,
                 style:
-                    TextStyle(fontSize: 12, color: MyColors.myGreen, height: 1),
+                    TextStyle(fontSize: 16, color: MyColors.myGreen, height: 1.5,),
               ),
-              Text(
+              /*Text(
                 "Instruction : ${meals.strInstructions}",
                 style: TextStyle(
                     fontSize: 14,
@@ -64,17 +57,31 @@ class MealsItem extends StatelessWidget {
                 overflow: TextOverflow.visible,
                 maxLines: 6,
                 textAlign: TextAlign.start,
-              ),
-              Text(
+              ),*/
+            /*  Text(
                 "Youtube : ${meals.strYoutube}",
                 style: TextStyle(
                     fontSize: 18,
                     color: Colors.blue,
                     height: 1.5,
                     fontWeight: FontWeight.normal),
-              ),
+              ),*/
             ],
           ),
+        ),
+        child: Container(
+          margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height*.15,top: MediaQuery.of(context).size.height*.001),
+          color: MyColors.myWhite,
+          child: meals.image.isNotEmpty
+              ? FadeInImage.assetNetwork(
+                  width: double.infinity,
+                  height: double.infinity,
+                  placeholder: 'assets/images/loading.gif',
+                  image: meals.image,
+                  fit: BoxFit.fitWidth,
+                  
+                )
+              : Image.asset('assets/images/searchbg.jpg'),
         ),
       ),
     );
