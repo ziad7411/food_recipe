@@ -19,7 +19,7 @@ class GenericFlexibleButton extends StatelessWidget {
         minHeight: MediaQuery.of(context).size.height*.01, 
       ),
       decoration: BoxDecoration(
-        color: MyColors.myGray,
+        color: MyColors.myBlue,
         borderRadius: BorderRadius.circular(4),
       ),
       child: Padding(
@@ -33,8 +33,8 @@ class GenericFlexibleButton extends StatelessWidget {
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(
-                vertical: 12.0,
-                horizontal: 20.0,
+                vertical: 10.0,
+                horizontal: 10.0,
               ), // Increase padding for text space
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
@@ -42,14 +42,16 @@ class GenericFlexibleButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4),
               ),
             ),
-            child: Text(
-              text,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: MyColors.myDarkGray,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                overflow: TextOverflow.ellipsis, // Add ellipsis if text overflows
               ),
-              overflow: TextOverflow.ellipsis, // Add ellipsis if text overflows
             ),
           ),
         ),

@@ -7,6 +7,7 @@ class Meals {
   late String image;
   late String strTags;
   late String strYoutube;
+  late String idMeal;
 
 Meals.fromJson(Map<String, dynamic> json) {
     strMeal = json["strMeal"] ?? "Unknown Meal";
@@ -16,6 +17,7 @@ Meals.fromJson(Map<String, dynamic> json) {
     image = json["strMealThumb"] ?? "";
     strTags = json["strTags"] ?? "No Tags";
     strYoutube = json["strYoutube"] ?? "No YouTube Link";
+    idMeal = json["idMeal"] ?? "No ID Link";
   }
 
 

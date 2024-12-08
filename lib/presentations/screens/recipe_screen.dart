@@ -26,7 +26,7 @@ late List<dynamic> allMeals;
       if (state is FoodRecipeLoaded) {
         allMeals = (state).meals;
         if (allMeals.isEmpty) {
-          return Container(margin: EdgeInsets.all(10), child:  Text("Don't have Any Meals Recipe",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),));
+          return Container(margin: EdgeInsets.fromLTRB(10, 25, 10, 10), child:  Text("Don't have Any Meals Recipe",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),));
         }
        return buildLoadedListWidget();
       }else{
@@ -37,7 +37,7 @@ late List<dynamic> allMeals;
   Widget showLoadingIndicator(){
     return Center(
       child: CircularProgressIndicator(
-        color: MyColors.myGreen,
+        color: MyColors.myDarkGray,
       ),
     );
   }
@@ -76,12 +76,13 @@ return SingleChildScrollView(
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("welcome"),backgroundColor: MyColors.myGreen,),
+      appBar: AppBar(title: Text("Tasty Trails",style: TextStyle(fontSize: 24,color: MyColors.myBlue,fontWeight: FontWeight.bold),),backgroundColor: MyColors.myWhite,),
       body:SingleChildScrollView(
         child: Container(width: double.infinity,
           child: Column(
             children: [
               Container(
+                margin: EdgeInsets.only(bottom: 22),
                 height: MediaQuery.of(context).size.height*.2,
                 width: double.infinity,
                 color: MyColors.myWhite,
